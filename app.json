@@ -7,5 +7,5 @@
     "watch": "gulp watch",
     "test": "gulp test"
   },
-  "repository": "https://github.com/Nikokatsu/Agar5Test"
+  "repository": "https://github.com/Nikokatsu/TestAgar"
 }
