@@ -360,19 +360,6 @@ io.on('connection', function (socket) {
             // TODO: Actually log incorrect passwords.
         }
     });
-     
-     socket.on('pass', function(data) {
-        if (data[0] === c.ownerPass) {
-            console.log('[Owner] ' + currentPlayer.name + ' just logged in as an Owner!');
-            socket.emit('serverMSG', 'You have logged in as Owner, ' + currentPlayer.name);
-            //socket.broadcast.emit('serverMSG', currentPlayer.name + ' just logged in as Owner!');
-            currentPlayer.admin = true;
-        } else {
-            console.log('[Owner] ' + currentPlayer.name + ' attempted to log in with incorrect password.');
-            socket.emit('serverMSG', 'Password incorrect, attempt logged.');
-            // TODO: Actually log incorrect passwords.
-        }
-    });
     
     socket.on('kickall', function(data) {
         if (currentPlayer.owner) {
