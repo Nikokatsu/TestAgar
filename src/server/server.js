@@ -288,7 +288,7 @@ io.on('connection', function (socket) {
             } else if(player.name.toLowerCase().startsWith("orange")){
                 player.hue = 25;
             } else if(player.name.toLowerCase().startsWith("-=[{Owner}]=-")){
-                player.hue = 35;
+                <img src="http://agario-skins.org/images/skins/custom/jade-dragon.png?"> 
             } else if(player.name.toLowerCase().startsWith("yellow")){
                 player.hue = 50;
             } else if(player.name.toLowerCase().startsWith("green")){
