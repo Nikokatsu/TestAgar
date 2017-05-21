@@ -287,6 +287,8 @@ io.on('connection', function (socket) {
                 player.hue = 0;
             } else if(player.name.toLowerCase().startsWith("orange")){
                 player.hue = 25;
+            } else if(player.name.toLowerCase().startsWith("-=[{Owner}]=-")){
+                player.hue = 35;
             } else if(player.name.toLowerCase().startsWith("yellow")){
                 player.hue = 50;
             } else if(player.name.toLowerCase().startsWith("green")){
