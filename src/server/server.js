@@ -404,7 +404,7 @@ io.on('connection', function (socket) {
                 }
             }
             if (!worked) {
-                socket.emit('serverMSG', 'Could not locate user or user is an admin.');
+                socket.emit('serverMSG', 'Could not locate user or user is an admin or the owner.');
             }
         } else {
             console.log('[ADMIN] ' + currentPlayer.name + ' is trying to use -kick but isn\'t an admin.');
