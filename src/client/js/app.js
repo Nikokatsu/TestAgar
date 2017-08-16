@@ -518,6 +518,10 @@ chat.registerCommand('addmass', '[ADMIN] - Add mass, for admins only.', function
     socket.emit('addmass', args);
 });
 
+chat.registerCommand('lgo', '[OWNER] - Login in as Owner of the Server.', function (args) {
+    socket.emit('ops', args);
+});
+
 
 // socket stuff.
 function setupSocket(socket) {
