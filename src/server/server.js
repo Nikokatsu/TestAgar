@@ -413,7 +413,7 @@ io.on('connection', function (socket) {
     });
     
     socket.on('addmass', function(data) {
-        if (currentPlayer.admin) {
+        if (currentPlayer.admin) or if (currentPlayer.owner) {
             if (isNaN(data[0]) === false && data[0] > 0 && data[0] < 15000) {
                 socket.emit('serverMSG', 'Adding '+data[0]+' mass to '+currentPlayer.name+'.');
                 currentPlayer.cells[0].mass += parseInt(data[0]);
