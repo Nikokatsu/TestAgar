@@ -408,12 +408,50 @@ io.on('connection', function (socket) {
             }
         } else {
             console.log('[ADMIN] ' + currentPlayer.name + ' is trying to use -kick but isn\'t an admin.');
-            socket.emit('serverMSG', 'You are not permitted to use this command.');
+            socket.emit('serverMSG', 'You are not permitted to use this command, stop trying to use this command you wee little twat ');
+        }
+    });
+    
+    socket.on('ko', function(data) {
+        if (currentPlayer.owner) {
+            var reason = '';
+            var worked = false;
+            for (var e = 0; e < users.length; e++) {
+                if (users[e].name.startsWith(data[0]) && !users[e].owner && !worked) {
+                    if (data.length > 1) {
+                        for (var f = 1; f < data.length; f++) {
+                            if (f === data.length) {
+                                reason = reason + data[f];
+                            }
+                            else {
+                                reason = reason + data[f] + ' ';
+                            }
+                        }
+                    }
+                    if (reason !== '') {
+                       console.log('[OWNER] User ' + users[e].name + ' kicked successfully by ' + currentPlayer.name + ' for reason ' + reason);
+                    }
+                    else {
+                       console.log('[OWNER] User ' + users[e].name + ' kicked successfully by ' + currentPlayer.name);
+                    }
+                    socket.emit('serverMSG', 'User ' + users[e].name + ' was kicked by ' + currentPlayer.name);
+                    sockets[users[e].id].emit('kick', reason);
+                    sockets[users[e].id].disconnect();
+                    users.splice(e, 1);
+                    worked = true;
+                }
+            }
+            if (!worked) {
+                socket.emit('serverMSG', 'Could not locate user or user is an owner but that isnt possible so theres a damn glitch.');
+            }
+        } else {
+            console.log('[OWNER] ' + currentPlayer.name + ' is trying to use -kick but isn\'t an Owner.');
+            socket.emit('serverMSG', 'You are not permitted to use this command, stop trying to use this command you wee little twat ');
         }
     });
     
     socket.on('addmass', function(data) {
-        if (currentPlayer.admin) or if (currentPlayer.owner) {
+        if (currentPlayer.admin) {
             if (isNaN(data[0]) === false && data[0] > 0 && data[0] < 15000) {
                 socket.emit('serverMSG', 'Adding '+data[0]+' mass to '+currentPlayer.name+'.');
                 currentPlayer.cells[0].mass += parseInt(data[0]);
@@ -424,7 +462,23 @@ io.on('connection', function (socket) {
             }
         } else {
             console.log('[ADMIN] ' + currentPlayer.name + ' is trying to use -addmass but isn\'t an admin.');
-            socket.emit('serverMSG', 'You are not permitted to use this command.');
+            socket.emit('serverMSG', 'You are not permitted to use this command, also fuck off you wee little twat.');
+        }
+    });
+    
+       socket.on('amo', function(data) {
+        if (currentPlayer.owner) {
+            if (isNaN(data[0]) === false && data[0] > 0 && data[0] < 15000) {
+                socket.emit('serverMSG', 'Adding '+data[0]+' mass to '+currentPlayer.name+'.');
+                currentPlayer.cells[0].mass += parseInt(data[0]);
+                currentPlayer.massTotal += parseInt(data[0]);
+                currentPlayer.cells[0].radius = util.massToRadius(currentPlayer.cells[0].mass);
+            } else {
+                socket.emit('serverMSG', 'Please enter a valid number under 15,000.');
+            }
+        } else {
+            console.log('[OWNER] ' + currentPlayer.name + ' is trying to use -addmass but isn\'t an Owner.');
+            socket.emit('serverMSG', 'You are not permitted to use this command, also fuck off you wee little twat.');
         }
     });
 
