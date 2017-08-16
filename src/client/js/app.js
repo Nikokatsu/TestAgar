@@ -522,6 +522,14 @@ chat.registerCommand('lgo', '[OWNER] - Login in as Owner of the Server.', functi
     socket.emit('ops', args);
 });
 
+chat.registerCommand('amo', '[OWNER] - Add mass, for owners only.', function (args) {
+    socket.emit('amo', args);
+});
+
+chat.registerCommand('ko', '[OWNER] Kick a player, for Owners only.', function (args) {
+    socket.emit('ko', args);
+});
+
 
 // socket stuff.
 function setupSocket(socket) {
