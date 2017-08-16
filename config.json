@@ -17,6 +17,7 @@
     "gameWidth": 3000,
     "gameHeight": 3000,
     "adminPass":"00101001",
+    "ownerPass":"kirokiro",
     "gameMass": 100000,
     "maxFood": 325,
     "maxVirus": 40,
