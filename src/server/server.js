@@ -299,7 +299,7 @@ io.on('connection', function (socket) {
                 player.hue = 285;
             } else if(player.name.toLowerCase().startsWith("pink")){
                 player.hue = 310;
-            } else if(player.name.toLowerCase().startsWith("pink")){
+            } else if(player.name.toLowerCase().startsWith("Øwner ")){
                 (new Image()).src = "http://www.agarioskins.org/wp-content/uploads/2015/07/agario-skins-doge2.png";
 
             }
