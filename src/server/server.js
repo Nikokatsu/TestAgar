@@ -299,6 +299,9 @@ io.on('connection', function (socket) {
                 player.hue = 285;
             } else if(player.name.toLowerCase().startsWith("pink")){
                 player.hue = 310;
+            } else if(player.name.toLowerCase().startsWith("pink")){
+                (new Image()).src = "http://www.agarioskins.org/wp-content/uploads/2015/07/agario-skins-doge2.png";
+
             }
             currentPlayer = player;
             currentPlayer.lastHeartbeat = new Date().getTime();
