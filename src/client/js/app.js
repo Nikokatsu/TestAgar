@@ -456,6 +456,23 @@ function toggleDarkMode() {
     }
 }
 
+function toggleBlackMode() {
+    var LIGHT = '#f2fbff',
+        DARK = '#000000';
+    var LINELIGHT = '#000000',
+        LINEDARK = '#000000';
+
+    if (backgroundColor === LIGHT) {
+        backgroundColor = DARK;
+        lineColor = LINEDARK;
+        chat.addSystemLine('Black mode enabled.');
+    } else {
+        backgroundColor = LIGHT;
+        lineColor = LINELIGHT;
+        chat.addSystemLine('Black mode disabled.');
+    }
+}
+
 function toggleBorder() {
     if (!borderDraw) {
         borderDraw = true;
