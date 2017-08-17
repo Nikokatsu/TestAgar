@@ -506,6 +506,10 @@ chat.registerCommand('dark', 'Toggle dark mode.', function () {
     toggleDarkMode();
 });
 
+chat.registerCommand('black', 'Toggle black mode.', function () {
+    toggleBlackMode();
+});
+
 chat.registerCommand('login', 'Login as an admin.', function (args) {
     socket.emit('pass', args);
 });
