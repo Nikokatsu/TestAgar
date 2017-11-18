@@ -20,7 +20,7 @@ var spin = -Math.PI;
 var enemySpin = -Math.PI;
 var mobile = false;
 var foodSides = 6;
-var virusSides = 35;
+var virusSides = 0;
 var pattern;
 var cell_bg;
 
