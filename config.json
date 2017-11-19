@@ -5,8 +5,8 @@
     "limitSplit": 360,
     "defaultPlayerMass": 50,
 	"virus": {
-		"fill": "#ffffff ",
-		"stroke": "#ffffff ",
+		"fill": "#ffffff",
+		"stroke": "#ffffff",
 		"strokeWidth": -1,
 		"defaultMass": {
             "from": -1,
@@ -16,8 +16,8 @@
 	},
     "gameWidth": 3000,
     "gameHeight": 3000,
-    "adminPass":"redditv4chan",
-    "ownerPass":"nogamenolife",
+    "adminPass":"00101001",
+    "ownerPass":"kirokiro",
     "gameMass": 100000,
     "maxFood": 325,
     "maxVirus": 40,
