@@ -1,5 +1,4 @@
 var io = require('socket.io-client');
-
 var playerName;
 var playerType;
 var playerNameInput = document.getElementById('playerNameInput');
@@ -23,7 +22,6 @@ var foodSides = 6;
 var virusSides = 0;
 var pattern;
 var cell_bg;
-
 var img = new Image();
 img.onload = function(){};
 img.src = "http://agar.io/skins/doge.png";
